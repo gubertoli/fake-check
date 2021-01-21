@@ -1,19 +1,19 @@
 # Objetivo
-Este repositório é um exemplo didático do uso de aprendizado de máquina, desta forma, busca-se a aplicação fim-a-fim do aprendizado de máquina, isto é, desde a obtenção dos dados, criação de atributos, avaliação dos modelos de aprendizado e criação do modelo final. 
+Este repositï¿½rio ï¿½ um exemplo didï¿½tico do uso de aprendizado de mï¿½quina, desta forma, busca-se a aplicaï¿½ï¿½o fim-a-fim do aprendizado de mï¿½quina, isto ï¿½, desde a obtenï¿½ï¿½o dos dados, criaï¿½ï¿½o de atributos, avaliaï¿½ï¿½o dos modelos de aprendizado e criaï¿½ï¿½o do modelo final. 
 
-Na sequência, o objetivo é colocar o modelo em produção (deploy) em conjunto com uma interface web para realizar requisições HTTP ao servidor que avaliará a classificação dos dados enviados quando analisado pelo modelo de aprendizado.
+Na sequï¿½ncia, o objetivo ï¿½ colocar o modelo em produï¿½ï¿½o (deploy) em conjunto com uma interface web para realizar requisiï¿½ï¿½es HTTP ao servidor que avaliarï¿½ a classificaï¿½ï¿½o dos dados enviados quando analisado pelo modelo de aprendizado.
 
 # Problema escolhido
 
-Para este estudo foi escolhido o problema de detecção de fake news, assim a partir de um texto de entrada o modelo treinado irá estimar se esse texto é classificado como texto verdadeiro ou como texto falso.
+Para este estudo foi escolhido o problema de detecï¿½ï¿½o de fake news, assim a partir de um texto de entrada o modelo treinado irï¿½ estimar se esse texto ï¿½ classificado como texto verdadeiro ou como texto falso.
 
 Trata-se de um problema de processamento de linguagem natual (PLN / NLP).
 
 Exemplo: http://nilc-fakenews.herokuapp.com/
 
-# Reproduzindo este repositório
+# Reproduzindo este repositï¿½rio
 ```
-$ git clone https://github.com/gubertoli/ml-fake-check.git
+$ git clone https://github.com/gubertoli/fake-check.git
 $ cd ml-fake-check
 $ pip install -r requirements.txt
 $ jupyter notebook

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake Check</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'app/styles.css' %}">
+</head>
+<body>
+    <h1>Fake Check</h1>
+    <form action="{% url 'app:index' %}" method="POST">
+        {% csrf_token %}
+        <div id="form">
+            {{ form }}
+        </div>
+        <div id="button">
+            <input type="submit" class="button" value="Verificar texto">
+        </div>
+        {% if zero and um %}
+        <div>
+            Probabilidade inferida:
+        <div>
+            Não ser fake news: {{ zero }}
+        </div>
+        <div>
+            Ser fake news: {{ um }}
+        </div>
+        </div>
+        {% endif %}
+    </form>
+</body>
+</html>

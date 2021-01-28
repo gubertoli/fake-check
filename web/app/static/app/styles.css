@@ -1,0 +1,23 @@
+h1 {
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 45px;
+}
+
+body {
+    text-align: center;
+}
+
+.button {
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid black;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    line-height: 1;
+    margin-top: 1.5rem;
+}
+
+textarea {
+    border: 1px solid black;
+}

@@ -7,6 +7,11 @@ import string
 import unidecode
 import re
 from pickle import load
+import os
+
+base_path = os.path.abspath(os.path.dirname(__file__))
+
+
 
 nltk_download("stopwords", quiet=True)
 nltk_download("rslp", quiet=True)
@@ -16,6 +21,10 @@ stemmer = RSLPStemmer()
 
 tokenizer = TweetTokenizer(preserve_case=False, strip_handles=True, reduce_len=True)
 min_length = 3
+
+def get_data_path():
+    data_dir = os.path.join(base_path)
+    return data_dir
 
 def valid(word):
     return len(word) >= min_length and re.match(r"^[a-z]*$", word) and word not in stop_words and word not in string.punctuation
@@ -54,6 +63,18 @@ Em tempo: até o momento o PT não cadastrou Kátia Abreu em suas fileiras. Que 
     inference = clf.predict_proba(X.toarray())
     print(inference)
 
+def process_text(text):
+    text_clean = clean(text)
+    text_stemmed = " ".join([ stemmer.stem(word) for word in text_clean.split(" ") ])
+    
+    
+    tfidf = load(open(os.path.join(get_data_path(), 'tfidf.pkl'), 'rb'))
+
+    clf = load(open(os.path.join(get_data_path(), 'clf.pkl'), 'rb'))
+    
+    X = tfidf.transform([text_stemmed])
+    inference = clf.predict_proba(X.toarray())
+    return inference
 
 if __name__ == "__main__":
     main()
